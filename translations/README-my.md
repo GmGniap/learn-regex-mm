@@ -59,6 +59,7 @@ validate the username:
 The regular expression above can accept the strings `john_doe`, `jo-hn_doe` and
 `john12_as`. It does not match `Jo` because that string contains an uppercase
 letter and also it is too short.
+အထက်ပါ regular expression သည် `john_doe`, `jo-hn_doe` နှင့် `john12_as` စသည့် စာသားများကို လက်ခံသည်။ သို့သော် `Jo` ဆိုသည်နှင့် ကိုက်ညီမည် မဟုတ်။ ဘာကြောင့်လဲဆိုသော် အဆိုပါ စာသားတွင် uppercase စာလုံးပါဝင်သည့်အဖြင့် စာလုံးအရေအတွက်မှာလဲ ၃ လုံးမပြည့်သောကြောင့် ဖြစ်သည်။
 
 ## Table of Contents
 
