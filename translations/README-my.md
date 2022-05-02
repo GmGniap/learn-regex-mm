@@ -37,19 +37,14 @@
 > A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 > Regular expression ဆိုတာကတော့ စာသားထဲမှာ ရှိတဲ့ တိကျသော ပုံစံ patten ကို ရှာဖွေရာတွင် အသုံးပြုသော စကားလုံးများ (သို့) သင်္ကေတများ စသည့် အစုအဖွဲ့ကို ဆိုလိုပါတယ်။
 
-A regular expression is a pattern that is matched against a subject string from
-left to right. Regular expressions are used to replace text within a string, 
-validate forms, extract a substring from a string based on a pattern match, 
-and so much more. The term "regular expression" is a mouthful, so you will usually
-find the term abbreviated to "regex" or "regexp". 
-Regular expression တစ်ခုက ရှာဖွေလိုသော စာကြောင်းတစ်ကြောင်းထဲမှာ ဘယ်ဘက်မှ ညာဘက်သို့ ကိုက်ညီမှု ရှိအောင် ရှာဖွေသွားသော pattern တစ်ခု ဖြစ်ပါတယ်။ Regular expression တွေကို စာကြောင်းထဲက စကားစုများကို အစားထိုးရန် ၊ စာရင်းအင်းဖောင် များကို စီစစ်ရန် ၊ ကိုက်ညီသော pattern အပေါ် အခြေတည်၍ စာကြောင်းထဲမှ စကားရပ်ကို ထုတ်နှုတ်ရန် - ရည်ရွယ်ချက်များစွာဖြင့် အသုံးပြုကြပါတယ်။ "Regular expression" ဆိုတဲ့ ရှည်လျားလှတဲ့ အသုံးအနှုန်း အစား အတိုကောက်အနေနဲ့ "regex" (သို့) "regexp" လို့လဲ ခေါ်ဝေါ်သုံးစွဲကြပါတယ်။
+Regular expression တစ်ခုသည် ရှာဖွေလိုသော စာကြောင်းတစ်ကြောင်းထဲတွင် ဘယ်ဘက်မှ ညာဘက်သို့ ကိုက်ညီမှု ရှိအောင် ရှာဖွေသွားသော pattern တစ်ခု ဖြစ်ပါတယ်။ Regular expression တွေကို စာကြောင်းထဲက စကားစုများကို အစားထိုးရန် ၊ စာရင်းအင်းဖောင် များကို စီစစ်ရန် ၊ ကိုက်ညီသော pattern အပေါ် အခြေတည်၍ စာကြောင်းထဲမှ စကားရပ်ကို ထုတ်နှုတ်ရန် - ရည်ရွယ်ချက်များစွာဖြင့် အသုံးပြုကြပါတယ်။ "Regular expression" ဆိုတဲ့ ရှည်လျားလှတဲ့ အသုံးအနှုန်း အစား အတိုကောက်အနေနဲ့ "regex" (သို့) "regexp" လို့လဲ ခေါ်ဝေါ်သုံးစွဲကြပါတယ်။
 
 Imagine you are writing an application and you want to set the rules for when a
 user chooses their username. We want to allow the username to contain letters,
 numbers, underscores and hyphens. We also want to limit the number of characters
 in the username so it does not look ugly. We can use the following regular expression to
 validate the username:
-သင့်အနေဖြင့် Application တစ်ခုကို ရေးနေပြီး အဆိုပါ App အသုံးပြုသူ အနေဖြင့် username ကို ရွေးချယ်ရာမှာ စံသတ်မှတ်ချက် rules များကို သင့်အနေဖြင့် သတ်မှတ်လိုသည် ဟု မြင်ယောင်ကြည့်ပါ။ အဆိုပါ username တွင် letters,numbers,underscores နှင့် hyphens များ ပါဝင်ခွင့် ပြုမည်။ သို့သော် username ကို ဖတ်ရဆိုးစေသည့် စကားလုံးအရေအတွက် ရှည်လျားစွာမပါဝင်စေရန် စာလုံးရေ ကို ကန့်သတ်ချင်သည်။ ကျွန်တော်တို့အနေဖြင့် အောက်ပါ Regular Expression ကို username အား စီစစ်ရန် အသုံးပြုနိုင်သည်။
+သင့်အနေဖြင့် Application တစ်ခုကို ရေးနေပြီး အဆိုပါ App အသုံးပြုသူများအတွက် username ကို ရွေးချယ်ရာမှာ စံသတ်မှတ်ချက် rules များကို သင့်အနေဖြင့် သတ်မှတ်လိုသည် ဟု မြင်ယောင်ကြည့်ပါ။ အဆိုပါ username တွင် letters,numbers,underscores နှင့် hyphens များ ပါဝင်ခွင့် ပြုမည်။ သို့သော် username ကို ဖတ်ရဆိုးစေသည့် စကားလုံးအရေအတွက် ရှည်လျားစွာမပါဝင်စေရန် စာလုံးရေ ကို ကန့်သတ်ချင်သည်။ ကျွန်တော်တို့အနေဖြင့် အောက်ပါ Regular Expression ကို username အား စီစစ်ရန် အသုံးပြုနိုင်သည်။
 
 <br/><br/>
 <p align="center">
@@ -92,7 +87,7 @@ letter and also it is too short.
   - [Multiline](#53-multiline)
 - [Greedy vs Lazy Matching](#6-greedy-vs-lazy-matching)
 
-## 1. Basic Matchers - အခြေခံ ကိုက်ညီမှုများ
+## 1. Basic Matchers
 
 A regular expression is just a pattern of characters that we use to perform a
 search in a text.  For example, the regular expression `the` means: the letter
@@ -116,7 +111,7 @@ regular expression `123` သည် စကားစု `123` နှင့် က�
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/1paXsy/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/1paXsy/1)
 
 ## 2. Meta Characters
 
@@ -125,20 +120,22 @@ characters do not stand for themselves but instead are interpreted in some
 special way. Some meta characters have a special meaning and are written inside
 square brackets. The meta characters are as follows:
 
-|Meta character|Description|
+Meta စာလုံးများ ဆိုသည်မှာ regular expression ကို တည်ဆောက်သည့်အရာများ ဖြစ်သည်။ Meta စာလုံးများအနေဖြင့် ၎င်းတို့ဘာသာ ရပ်တည်နိုင်ခြင်းမရှိသောလည်း အရေးပါသည့်နည်းလမ်းများအနေဖြင့် အသုံးဝင်သည်။ အချို့သော meta character များသည် ထူးခြားသည့် အဓိပ္ပါယ် ရှိပြီး ၎င်းတို့ကို square brackets [] ထဲတွင် ရေးသည်။ Meta စာလုံးများမှာ အောက်ပါအတိုင်း ဖြစ်သည်။ 
+
+|Meta စာလုံးများ|အဓိပ္ပါယ်ဖွင့်ဆိုချက်|
 |:----:|----|
-|.|Period matches any single character except a line break.|
-|[ ]|Character class. Matches any character contained between the square brackets.|
-|[^ ]|Negated character class. Matches any character that is not contained between the square brackets|
-|*|Matches 0 or more repetitions of the preceding symbol.|
-|+|Matches 1 or more repetitions of the preceding symbol.|
-|?|Makes the preceding symbol optional.|
-|{n,m}|Braces. Matches at least "n" but not more than "m" repetitions of the preceding symbol.|
-|(xyz)|Character group. Matches the characters xyz in that exact order.|
-|&#124;|Alternation. Matches either the characters before or the characters after the symbol.|
-|&#92;|Escapes the next character. This allows you to match reserved characters <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
-|^|Matches the beginning of the input.|
-|$|Matches the end of the input.|
+|.|line break လိုင်းခြားခြင်း မှလွဲ၍ အခြား မည်သည့် စာလုံးတစ်လုံးတည်းနှင့်မဆို ကိုက်ညီသည်။.|
+|[ ]|Character class. Square brackets အတွင်းရှိ ပါဝင်သည့် မည်သည့်စာလုံးနှင့်မဆို ကိုက်ညီသည်။|
+|[^ ]|ဆန့်ကျင်ဘက် character class. Square brackets အတွင်းတွင် မပါဝင်သည့် မည်သည့်စာလုံးနှင့်မဆို ကိုက်ညီသည်။|
+|*|ပါဝင်မှုလုံးဝ မရှိခြင်း - သုည (သို့) အကြိမ်ရေများစွာ ပါဝင်သော စာလုံးနှင့် ကိုက်ညီသည်။|
+|+|တစ်ကြိမ် (သို့) တစ်ကြိမ်အထက် အကြိမ်ရေများစွာ ပါဝင်သော စာလုံးနှင့် ကိုက်ညီသည်။|
+|?|တွဲလျက်စာလုံးကို Optional(အခြေအနေအလိုက်) အဖြစ် ပြောင်းလဲပေးသည်။|
+|{n,m}|Braces. အနည်းဆုံး "n" အကြိမ်ရေ မှ အများဆုံး "m" အကြိမ်ရေအတွင်း ပါဝင်သော စာလုံးနှင့် ကိုက်ညီသည်။|
+|(xyz)|Character group. xyz စာလုံးအစီအစဥ်အတိုင်း ကိုက်ညီသည်။|
+|&#124;|Alternation. သင်္ကေတ၏ အရှေ့ (သို့) အနောက်ရှိ စာလုံး တစ်ခုခုနှင့် ကိုက်ညီစေသည်။|
+|&#92;| Escape. တွဲလျက်စကားလုံး ကို ချွင်းချက် ဖြစ်စေသည်။ အထူးစာလုံးများနှင့်အတူ တွဲလျက်သုံးသည်။ <code>[ ] ( ) { } . * + ? ^ $ \ &#124;</code>|
+|^|စာကြောင်းအစ နှင့် ကိုက်ညီသည်။|
+|$|စာကြောင်းအဆုံး နှင့် ကိုက်ညီသည်။|
 
 ## 2.1 The Full Stop
 
