@@ -37,7 +37,7 @@
 > A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 > Regular expression ဆိုတာကတော့ စာသားထဲမှာ ရှိတဲ့ တိကျသော ပုံစံ patten ကို ရှာဖွေရာတွင် အသုံးပြုသော စကားလုံးများ (သို့) သင်္ကေတများ စသည့် အစုအဖွဲ့ကို ဆိုလိုပါတယ်။
 
-Regular expression တစ်ခုသည် ရှာဖွေလိုသော စာကြောင်းတစ်ကြောင်းထဲတွင် ဘယ်ဘက်မှ ညာဘက်သို့ ကိုက်ညီမှု ရှိအောင် ရှာဖွေသွားသော pattern တစ်ခု ဖြစ်ပါတယ်။ Regular expression တွေကို စာကြောင်းထဲက စကားစုများကို အစားထိုးရန် ၊ စာရင်းအင်းဖောင် များကို စီစစ်ရန် ၊ ကိုက်ညီသော pattern အပေါ် အခြေတည်၍ စာကြောင်းထဲမှ စကားရပ်ကို ထုတ်နှုတ်ရန် - ရည်ရွယ်ချက်များစွာဖြင့် အသုံးပြုကြပါတယ်။ "Regular expression" ဆိုတဲ့ ရှည်လျားလှတဲ့ အသုံးအနှုန်း အစား အတိုကောက်အနေနဲ့ "regex" (သို့) "regexp" လို့လဲ ခေါ်ဝေါ်သုံးစွဲကြပါတယ်။
+Regular expression ဆိုသည်မှာ ရှာဖွေလိုသော စာကြောင်းတစ်ကြောင်းထဲတွင် ဘယ်ဘက်မှ ညာဘက်သို့ ကိုက်ညီမှု ရှိအောင် ရှာဖွေသွားသော pattern တစ်ခု ဖြစ်ပါတယ်။ Regular expression တွေကို စာကြောင်းထဲက စကားစုများကို အစားထိုးရန် ၊ စာရင်းအင်းဖောင် များကို စီစစ်ရန် ၊ ကိုက်ညီသော pattern အပေါ် အခြေတည်၍ စာကြောင်းထဲမှ စကားရပ်ကို ထုတ်နှုတ်ရန် - ရည်ရွယ်ချက်များစွာဖြင့် အသုံးပြုကြပါတယ်။ "Regular expression" ဆိုတဲ့ ရှည်လျားလှတဲ့ အသုံးအနှုန်း အစား အတိုကောက်အနေနဲ့ "regex" (သို့) "regexp" လို့လဲ ခေါ်ဝေါ်သုံးစွဲကြပါတယ်။
 
 Imagine you are writing an application and you want to set the rules for when a
 user chooses their username. We want to allow the username to contain letters,
@@ -89,10 +89,7 @@ letter and also it is too short.
 
 ## 1. Basic Matchers
 
-A regular expression is just a pattern of characters that we use to perform a
-search in a text.  For example, the regular expression `the` means: the letter
-`t`, followed by the letter `h`, followed by the letter `e`.
-Regular expression တစ်ခုသည် စကားလုံး pattern တစ်သာ ဖြစ်ပြီး ကျွန်တော်တို့အနေနဲ့ စာသားတစ်ကြောင်းထဲတွင် ကိုက်ညီမှု ရှာရန် အသုံးပြုသည်။ ဥပမာ - regular expression တစ်ခုဖြစ်သည် `the` သည် စာသားထဲတွင် `t` ,ဆက်လျက် `h`,ဆက်လျက် `e` ဆိုသည့် အဓိပ္ပါယ်ဖြစ်သည်။
+Regular expression သည် စကားလုံး pattern တစ်ခုသာ ဖြစ်ပြီး ကျွန်တော်တို့အနေနဲ့ စာသားတစ်ကြောင်းထဲတွင် ကိုက်ညီမှုကို ရှာရန် အသုံးပြုသည်။ ဥပမာ - regular expression တစ်ခုဖြစ်သည် `the` သည် စာလုံးအနေဖြင့် - `t` ,ဆက်လျက် `h`,ဆက်လျက် `e` ဆိုသည့် အဓိပ္ပါယ်ဖြစ်သည်။
 
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
@@ -100,11 +97,6 @@ Regular expression တစ်ခုသည် စကားလုံး pattern တ
 
 [regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/dmRygT/1)
 
-The regular expression `123` matches the string `123`. The regular expression is
-matched against an input string by comparing each character in the regular
-expression to each character in the input string, one after another. Regular
-expressions are normally case-sensitive so the regular expression `The` would
-not match the string `the`.
 regular expression `123` သည် စကားစု `123` နှင့် ကိုက်ညီသည်။ regular expression သည် input စကားစုကို regular expression အတွင်းရှိ စကားလုံးတစ်လုံးချင်းဆီနှင့် တစ်လုံးချင်းတစ်လုံး တိုက်ဆိုင်စစ်ဆေးသည်။ Regular expression များသည် ယေဘုယျအားဖြင့် case-sensitive အမှားအယွင်းမရှိရပါ။ ဥပမာ- regular expression `The` သည် စကားစု `the` နှင့် ကိုက်ညီလိမ့်မည် မဟုတ်ပါ။
 
 <pre>
@@ -114,11 +106,6 @@ regular expression `123` သည် စကားစု `123` နှင့် က�
 [regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/1paXsy/1)
 
 ## 2. Meta Characters
-
-Meta characters are the building blocks of regular expressions.  Meta
-characters do not stand for themselves but instead are interpreted in some
-special way. Some meta characters have a special meaning and are written inside
-square brackets. The meta characters are as follows:
 
 Meta စာလုံးများ ဆိုသည်မှာ regular expression ကို တည်ဆောက်သည့်အရာများ ဖြစ်သည်။ Meta စာလုံးများအနေဖြင့် ၎င်းတို့ဘာသာ ရပ်တည်နိုင်ခြင်းမရှိသောလည်း အရေးပါသည့်နည်းလမ်းများအနေဖြင့် အသုံးဝင်သည်။ အချို့သော meta character များသည် ထူးခြားသည့် အဓိပ္ပါယ် ရှိပြီး ၎င်းတို့ကို square brackets [] ထဲတွင် ရေးသည်။ Meta စာလုံးများမှာ အောက်ပါအတိုင်း ဖြစ်သည်။ 
 
@@ -144,11 +131,13 @@ matches any single character. It will not match return or newline characters.
 For example, the regular expression `.ar` means: any character, followed by the
 letter `a`, followed by the letter `r`.
 
+Full stop `.` သည် meta စာလုံး၏ အရိုးရှင်းဆုံး ဥပမာဖြစ်သည်။ meta စာလုံးဖြစ်သော `.` သည် မည်သည့် စာလုံးတစ်လုံးနှင့်မဆို ကိုက်ညီသည်။ ၎င်းသည် return (သို့) newline တစ်ကြောင်းဆင်းသည့် character များနှင့်တော့ ကိုက်ညီမည် မဟုတ်။ ဥပမာ အားဖြင့် regular expression `.ar` ဆိုသည်မှာ မည်သည့် စာလုံး မဆို - နောက်တွင် `a`,ဆက်လျက် `r` ရှိသည်ဟု ဆိုလိုသည်။
+
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/xc9GkU/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/xc9GkU/1)
 
 ## 2.2 Character Sets
 
@@ -158,34 +147,35 @@ characters' range. The order of the character range inside the square brackets
 doesn't matter. For example, the regular expression `[Tt]he` means: an uppercase
 `T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
 
+Character sets များကို character classes များဟုလဲ ခေါ်သည်။ character sets များကို ဖော်ပြရန်အတွက် Square brackets [] များကို အသုံးပြုသည်။ character set အတွင်းတွင် hyphen အသုံးပြုခြင်းအားဖြင့် characters အပိုင်းအခြား ကို ဖော်ပြသည်။ (ဥပမာ - [A-Z] ဆိုသည်မှာ A မှ Z အထိ character များအားလုံး ပါဝင်သည့် အဓိပ္ပါယ် ဖြစ်သည်။) regular expression `[Tt]he` ဆိုသည်မှာ uppercase `T` (သို့) lowercase `t` ကြိုက်ရာဖြစ်နိုင်ပြီး နောက်ဆက်တွဲ စာလုံး `h`,ဆက်လျက် `e` ပါဝင်သည်ဟု ဆိုလိုသည်။
+
 <pre>
 "[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/2ITLQ4/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/2ITLQ4/1)
 
 A period inside a character set, however, means a literal period. The regular
 expression `ar[.]` means: a lowercase character `a`, followed by the letter `r`,
 followed by a period `.` character.
 
+character set အတွင်းရှိ period တစ်ခုကို literal period ဟု ခေါ်သည်။ regular expression `ar[.]` သည် lowercase `a`,နောက်တွင် `r`,ဆက်လျက် period `.` စာလုံး ရှိသည်ဟု ဆိုလိုသည်။ 
+
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/wL3xtE/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/wL3xtE/1)
 
 ### 2.2.1 Negated Character Sets
 
-In general, the caret symbol represents the start of the string, but when it is
-typed after the opening square bracket it negates the character set. For
-example, the regular expression `[^c]ar` means: any character except `c`,
-followed by the character `a`, followed by the letter `r`.
+ယေဘုယျအားဖြင့် caret သင်္ကေတ `^` သည် စာကြောင်းအစ ကို ရည်ညွှန်းသော်လည်း ၎င်းကို square bracket [] အတွင်းတွင် ရေးသော်အခါ ၎င်းသည် character set ၏ ဆန့်ကျင်ဘက် ကို ဆိုလိုကြောင်း ဖြစ်သွားသည်။ ဥပမာ - regular expression `[^c]ar` သည် `c` စာလုံးမှ လွဲ၍ အခြားမည်သည့်စာလုံး တစ်လုံးလုံး၏ နောက်တွင် `a`,ဆက်လျက် `r` ရှိသည်ဟု ဆိုလိုသည်။
 
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/nNNlq3/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/nNNlq3/1)
 
 ## 2.3 Repetitions
 
@@ -205,7 +195,7 @@ the repetitions of the whole character set. For example, the regular expression
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/7m8me5/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/7m8me5/1)
 
 The `*` symbol can be used with the meta character `.` to match any string of
 characters `.*`. The `*` symbol can be used with the whitespace character `\s`
@@ -218,7 +208,7 @@ followed by zero or more spaces.
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/gGrwuz/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/gGrwuz/1)
 
 ### 2.3.2 The Plus
 
@@ -231,7 +221,7 @@ clarified that`t` is the last `t` in the sentence.
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Dzf9Aa/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/Dzf9Aa/1)
 
 ### 2.3.3 The Question Mark
 
@@ -244,13 +234,13 @@ For example, the regular expression `[T]?he` means: Optional uppercase
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/cIg9zm/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/cIg9zm/1)
 
 <pre>
 "[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/kPpO2x/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/kPpO2x/1)
 
 ## 2.4 Braces
 
@@ -263,7 +253,7 @@ repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/juM86s/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/juM86s/1)
 
 We can leave out the second number. For example, the regular expression
 `[0-9]{2,}` means: Match 2 or more digits. If we also remove the comma, the
@@ -273,13 +263,13 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Gdy4w5/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/Gdy4w5/1)
 
 <pre>
 "[0-9]{3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to 10.0.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Sivu30/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/Sivu30/1)
 
 ## 2.5 Capturing Groups
 
@@ -296,7 +286,7 @@ For example, the regular expression `(c|g|p)ar` means: a lowercase `c`,
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/tUxrBG/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/tUxrBG/1)
 
 Note that capturing groups do not only match, but also capture, the characters for use in 
 the parent language. The parent language could be Python or JavaScript or virtually any
@@ -313,7 +303,7 @@ within parentheses `(...)`. For example, the regular expression `(?:c|g|p)ar` is
 "(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/Rm7Me8/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/Rm7Me8/1)
 
 Non-capturing groups can come in handy when used in find-and-replace functionality or 
 when mixed with capturing groups to keep the overview when producing any other kind of output. 
@@ -336,7 +326,7 @@ in parentheses can be met and it will match.
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/fBXyX0/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/fBXyX0/1)
 
 ## 2.7 Escaping Special Characters
 
