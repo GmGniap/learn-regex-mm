@@ -53,7 +53,7 @@ validate the username:
 
 <br/><br/>
 <p align="center">
-  <img src="./img/regexp-en.png" alt="Regular expression">
+  <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
 The regular expression above can accept the strings `john_doe`, `jo-hn_doe` and
@@ -92,23 +92,25 @@ letter and also it is too short.
   - [Multiline](#53-multiline)
 - [Greedy vs Lazy Matching](#6-greedy-vs-lazy-matching)
 
-## 1. Basic Matchers
+## 1. Basic Matchers - အခြေခံ ကိုက်ညီမှုများ
 
 A regular expression is just a pattern of characters that we use to perform a
 search in a text.  For example, the regular expression `the` means: the letter
 `t`, followed by the letter `h`, followed by the letter `e`.
+Regular expression တစ်ခုသည် စကားလုံး pattern တစ်သာ ဖြစ်ပြီး ကျွန်တော်တို့အနေနဲ့ စာသားတစ်ကြောင်းထဲတွင် ကိုက်ညီမှု ရှာရန် အသုံးပြုသည်။ ဥပမာ - regular expression တစ်ခုဖြစ်သည် `the` သည် စာသားထဲတွင် `t` ,ဆက်လျက် `h`,ဆက်လျက် `e` ဆိုသည့် အဓိပ္ပါယ်ဖြစ်သည်။
 
 <pre>
 "the" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dmRygT/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/dmRygT/1)
 
 The regular expression `123` matches the string `123`. The regular expression is
 matched against an input string by comparing each character in the regular
 expression to each character in the input string, one after another. Regular
 expressions are normally case-sensitive so the regular expression `The` would
 not match the string `the`.
+regular expression `123` သည် စကားစု `123` နှင့် ကိုက်ညီသည်။ regular expression သည် input စကားစုကို regular expression အတွင်းရှိ စကားလုံးတစ်လုံးချင်းဆီနှင့် တစ်လုံးချင်းတစ်လုံး တိုက်ဆိုင်စစ်ဆေးသည်။ Regular expression များသည် ယေဘုယျအားဖြင့် case-sensitive အမှားအယွင်းမရှိရပါ။ ဥပမာ- regular expression `The` သည် စကားစု `the` နှင့် ကိုက်ညီလိမ့်မည် မဟုတ်ပါ။
 
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
