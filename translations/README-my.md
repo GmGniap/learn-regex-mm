@@ -315,15 +315,15 @@ caret symbol `^` ကို စာကြောင်း၏ ပထမဆုံး�
 There are a number of convenient shorthands for commonly used character sets/
 regular expressions:
 
-|Shorthand|Description|
+|အတိုကောက်|အဓိပ္ပါယ်ဖွင့်ဆိုချက်|
 |:----:|----|
-|.|Any character except new line|
-|\w|Matches alphanumeric characters: `[a-zA-Z0-9_]`|
-|\W|Matches non-alphanumeric characters: `[^\w]`|
-|\d|Matches digits: `[0-9]`|
-|\D|Matches non-digits: `[^\d]`|
-|\s|Matches whitespace characters: `[\t\n\f\r\p{Z}]`|
-|\S|Matches non-whitespace characters: `[^\s]`|
+|.|new line မှလွဲ၍ အခြားမည်သည့်စာလုံး မဆို|
+|\w|စာလုံးများ၊ကိန်းဂဏန်းများနှင့် ကိုက်ညီသည်။ : `[a-zA-Z0-9_]`|
+|\W|စာလုံးများ၊ကိန်းဂဏန်းများမဟုတ်သည့် စာလုံးများနှင့် ကိုက်ညီသည်။ : `[^\w]`|
+|\d|ကိန်းဂဏန်းများနှင့် ကိုက်ညီသည်။ : `[0-9]`|
+|\D|ကိန်းဂဏန်းမဟုတ်သည့် စာလုံးများနှင့် ကိုက်ညီသည်။ : `[^\d]`|
+|\s|ကွက်လပ် whitespace များနှင့် ကိုက်ညီသည်။ : `[\t\n\f\r\p{Z}]`|
+|\S|ကွက်လပ် whitespace မဟုတ်သည့် စာလုံးများနှင့် ကိုက်ညီသည်။ : `[^\s]`|
 
 ## 4. Lookarounds
 
