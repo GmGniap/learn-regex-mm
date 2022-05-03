@@ -23,6 +23,7 @@
 * [Tiếng Việt](translations/README-vn.md)
 * [فارسی](translations/README-fa.md)
 * [עברית](translations/README-he.md)
+* [မြန်မာ](translations/README-my.md)
 
 
 ## What is Regular Expression?
