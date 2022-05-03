@@ -240,11 +240,6 @@ capturing groups များသည် တူညီမှုကို ရှာ�
 
 ### 2.5.1 Non-Capturing Groups
 
-A non-capturing group is a capturing group that matches the characters but 
-does not capture the group. A non-capturing group is denoted by a `?` followed by a `:` 
-within parentheses `(...)`. For example, the regular expression `(?:c|g|p)ar` is similar to 
-`(c|g|p)ar` in that it matches the same characters but will not create a capture group.
-
 non-capturing group ဆိုသည်မှာ စာလုံးများကို ကိုက်ညီပေးသည့် capturing group ဖြစ်သော်လည်း အဆိုပါ group ကို မှတ်သားခြင်း မပြုလုပ်ပါ။ non-capturing group ကို `(...)` parentheses အတွင်းတွင် `?`,ဆက်လျက် `:` ဖြင့် ဖော်ပြသည်။ ဥပမာအားဖြင့် regular expression `(?:c|g|p)ar` သည် `(c|g|p)ar` နှင့် ဆင်တူသည်။ ၎င်းသည် တူညီသောစာလုံးများကို ကိုက်ညီပေးသော်လဲ group တစ်ခုအနေဖြင့် မှတ်သားလိမ့်မည် မဟုတ်ပါ။
 
 <pre>
@@ -258,17 +253,6 @@ Non-capturing group သည် find & replace function (သို့) မည်�
 
 ## 2.6 Alternation
 
-In a regular expression, the vertical bar `|` is used to define alternation.
-Alternation is like an OR statement between multiple expressions. Now, you may be
-thinking that character sets and alternation work the same way. But the big
-difference between character sets and alternation is that character sets work at the
-character level but alternation works at the expression level. For example, the
-regular expression `(T|t)he|car` means: either (an uppercase `T` or a lowercase
-`t`, followed by a lowercase `h`, followed by a lowercase `e`) OR
-(a lowercase `c`, followed by a lowercase `a`, followed by
-a lowercase `r`). Note that I included the parentheses for clarity, to show that either expression
-in parentheses can be met and it will match.
-
 regular expression တွင် ဒေါင်လိုက်ဘား သင်္ကေတ `|` သည် alternation ကို ဖော်ပြရန် အသုံးပြုသည်။ Alternation ဆိုသည်မှာ တစ်ခုထက်ပိုသော expression များအကြားတွင် OR statement ကဲ့သို့ အလုပ်လုပ်သည်။ ယခု သင့်အနေဖြင့် character sets [] နှင့် alternation `|` အကြား တူညီသည်ဟု ထင်နေနိုင်သည်။ သို့သော် character sets နှင့် alternation အကြား အဓိကခြားနားချက်မှာ character sets သည် စကားလုံးအဆင့် character level တွင်သာ အလုပ်လုပ်ပြီး alternation ကမူ ဖော်ပြချက် expression level တွင် အလုပ်လုပ်သည်။ ဥပမာ - regular expression `(T|t)he|car` သည် (စာလုံးကြီး `T` သို့ စာလုံးသေး `t`,နောက်တွင် စာလုံးသေး `h`,ဆက်လျက် စာလုံးသေး `e`) သို့မဟုတ် (စာလုံးသေး `c`,ဆက်လျက် စာလုံးသေး `a`,ဆက်လျက် စာလုံးသေး `r`) - အခြေအနေနှစ်ခု အနက် တစ်ခု ဖြစ်နိုင်သည်။ ဒီနေရာတွင် ကျွန်တော်တို့အနေနဲ့ () parentheses များကို ရှင်းလင်းစေရန် ထည့်သွင်းဖော်ပြထားပီး parentheses အတွင် ဖြစ်နိုင်သည့် အခြေအနေတစ်ခုချင်းဆီ ကိုက်ညီနိုင်မှုကို မြင်သာစေရန် ဖြစ်သည်။
 
 <pre>
@@ -279,18 +263,9 @@ regular expression တွင် ဒေါင်လိုက်ဘား သင�
 
 ## 2.7 Escaping Special Characters
 
-A backslash `\` is used in regular expressions to escape the next character. This
-allows us to include reserved characters such as `{ } [ ] / \ + * . $ ^ | ?` as matching characters. To use one of these special character as a matching character, prepend it with `\`.
-
 Backslash `\` ကို regular expressions တွင် တွဲလျက်စာလုံးကို ချွင်းချက်ဖြစ်စေရန် (သို့) လွတ်မြောက်စေရန် သုံးသည်။ အထူးစာလုံးများဖြစ်သည့် `{ } [ ] / \ + * . $ ^ | ?` များကို သာမာန်စာလုံးများအနေဖြင့် ကိုက်ညီစေရန် တွဲဖက်အသုံးပြုနိုင်သည်။ ထိုသို့ အထူးစာလုံးများထဲမှ တစ်လုံးကို အသုံးပြုမည် ဆိုပါက ၎င်းကို `\` တွဲကပ်လျက် အသုံးပြုပါ။
 
-For example, the regular expression `.` is used to match any character except a
-newline. Now, to match `.` in an input string, the regular expression
-`(f|c|m)at\.?` means: a lowercase `f`, `c` or `m`, followed by a lowercase
-`a`, followed by a lowercase `t`, followed by an optional `.`
-character.
-
-ဥပမာအားဖြင့် regular expression `.` သည် newline မှလွဲ၍ အခြားမည်သည့် စာလုံးနှင့်မဆို ကိုက်ညီရန် အသုံးပြုသည်။ ယခု `.` ကို သာမာန်စာကြောင်းအနေဖြင့် ကိုက်ညီစေရန် the regular expression
+ဥပမာအားဖြင့် regular expression `.` သည် newline မှလွဲ၍ အခြားမည်သည့် စာလုံးနှင့်မဆို ကိုက်ညီရန် အသုံးပြုသည်။ ယခု `.` ကို သာမာန်စာကြောင်းအနေဖြင့် ကိုက်ညီစေရန် စမ်းသပ်မည်။ regular expression
 `(f|c|m)at\.?` ဆိုသည်မှာ စာလုံးသေး `f`(သို့) `c` (သို့) `m`,နောက်တွင် ဆက်လျက် စာလုံးသေး `a`,ဆက်လျက် စာလုံးသေး `t`,ဆက်လျက် optional `.` ရှိမည်ဟု ဆိုလိုသည်။
 
 <pre>
@@ -301,28 +276,17 @@ character.
 
 ## 2.8 Anchors
 
-In regular expressions, we use anchors to check if the matching symbol is the
-starting symbol or ending symbol of the input string. Anchors are of two types:
-The first type is the caret `^` that checks if the matching character is the first
-character of the input and the second type is the dollar sign `$` which checks if a matching
-character is the last character of the input string.
+regular expressions များတွင် ကျွန်တော်တို့အနေဖြင့် စာကြောင်း၏ အစစာလုံး (သို့) အဆုံးသတ်စာလုံးတို့ကို စီစစ်ရန် anchors များကို အသုံးပြုသည်။ Anchors တွင် အမျိုးအစား ၂ ခု ရှိသည်။ ပထမတစ်ခုမှာ caret `^` ဖြစ်ပြီး စာကြောင်း၏ ပထမဆုံးစာလုံးကို ကိုက်ညီရာတွင် အသုံးပြုသည်။ ဒုတိယမှာ ဒေါ်လာသင်္ကေတ `$` ဖြစ်ပီး စာကြောင်း၏ နောက်ဆုံးစာလုံးကို ကိုက်ညီရာတွင် အသုံးပြုသည်။ 
 
 ### 2.8.1 The Caret
 
-The caret symbol `^` is used to check if a matching character is the first character
-of the input string. If we apply the following regular expression `^a` (meaning 'a' must be
-the starting character) to the string `abc`, it will match `a`. But if we apply
-the regular expression `^b` to the above string, it will not match anything.
-Because in the string `abc`, the "b" is not the starting character. Let's take a look
-at another regular expression `^(T|t)he` which means: an uppercase `T` or
-a lowercase `t` must be the first character in the string, followed by a
-lowercase `h`, followed by a lowercase `e`.
+caret symbol `^` ကို စာကြောင်း၏ ပထမဆုံးစာလုံးကို ကိုက်ညီရာတွင် အသုံးပြုသည်။ အကယ်၍ regular expression `^a` ဟု ဆိုပါက 'a' သည် ပထမဆုံးစာလုံး ဖြစ်ရန်လိုအပ်ပြီး `abc` ဆိုသည့် စာကြောင်းတွင် `a` နှင့် ကိုက်ညီလိမ့်မည်။ သို့သော် regular expression `^b` ဟု ပြောင်းလဲပါက အထက်ပါ `abc` စာကြောင်းတွင် မည်သည်နှင့်မျှ ကိုက်ညီမည် မဟုတ်ပါ။ အဘယ်ကြောင့်ဆိုသော် `abc` တွင် "b" သည် ပထမဆုံး စာလုံးမဟုတ်သောကြောင့် ဖြစ်သည်။ နောက်ထပ် regular expression တစ်ခုကို ထပ်ကြည့်ကြပါစို့ ။ regular expression `^(T|t)he` သည် စာလုံးကြီး `T` (သို့) စာလုံးသေး `t` သည် စာကြောင်းတွင် ပထမဆုံးစာလုံး ဖြစ်ရန် လိုအပ်ပီး နောက်တွင် ဆက်လျက် စာလုံးသေး `h`,ဆက်လျက် စာလုံးသေး `e` ပါဝင်မည် ဖြစ်သည်။ 
 
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/5ljjgB/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/5ljjgB/1)
 
 <pre>
 "^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -332,10 +296,7 @@ lowercase `h`, followed by a lowercase `e`.
 
 ### 2.8.2 The Dollar Sign
 
-The dollar sign `$` is used to check if a matching character is the last character
-in the string. For example, the regular expression `(at\.)$` means: a
-lowercase `a`, followed by a lowercase `t`, followed by a `.`
-character and the matcher must be at the end of the string.
+ဒေါ်လာသင်္ကေတ `$` ကို စာကြောင်း၏ နောက်ဆုံးစာလုံးကို ကိုက်ညီရာတွင် အသုံးပြုသည်။ ဥပမာ - regular expression `(at\.)$` ဆိုသည်မှာ စာကြောင်း၏ နောက်ဆုံးစာလုံးသည် စာလုံးသေး `a`,ဆက်လျက် စာလုံးသေး `t`,ဆက်လျက် `.` သာမန်fullstopစာလုံး ဖြစ်ရမည် ဖြစ်သည်။
 
 <pre>
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
