@@ -34,16 +34,10 @@
     </a>
 </p>
 
-> A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 > Regular expression ဆိုတာကတော့ စာသားထဲမှာ ရှိတဲ့ တိကျသော ပုံစံ patten ကို ရှာဖွေရာတွင် အသုံးပြုသော စကားလုံးများ (သို့) သင်္ကေတများ စသည့် အစုအဖွဲ့ကို ဆိုလိုပါတယ်။
 
 Regular expression ဆိုသည်မှာ ရှာဖွေလိုသော စာကြောင်းတစ်ကြောင်းထဲတွင် ဘယ်ဘက်မှ ညာဘက်သို့ ကိုက်ညီမှု ရှိအောင် ရှာဖွေသွားသော pattern တစ်ခု ဖြစ်ပါတယ်။ Regular expression တွေကို စာကြောင်းထဲက စကားစုများကို အစားထိုးရန် ၊ စာရင်းအင်းဖောင် များကို စီစစ်ရန် ၊ ကိုက်ညီသော pattern အပေါ် အခြေတည်၍ စာကြောင်းထဲမှ စကားရပ်ကို ထုတ်နှုတ်ရန် - ရည်ရွယ်ချက်များစွာဖြင့် အသုံးပြုကြပါတယ်။ "Regular expression" ဆိုတဲ့ ရှည်လျားလှတဲ့ အသုံးအနှုန်း အစား အတိုကောက်အနေနဲ့ "regex" (သို့) "regexp" လို့လဲ ခေါ်ဝေါ်သုံးစွဲကြပါတယ်။
 
-Imagine you are writing an application and you want to set the rules for when a
-user chooses their username. We want to allow the username to contain letters,
-numbers, underscores and hyphens. We also want to limit the number of characters
-in the username so it does not look ugly. We can use the following regular expression to
-validate the username:
 သင့်အနေဖြင့် Application တစ်ခုကို ရေးနေပြီး အဆိုပါ App အသုံးပြုသူများအတွက် username ကို ရွေးချယ်ရာမှာ စံသတ်မှတ်ချက် rules များကို သင့်အနေဖြင့် သတ်မှတ်လိုသည် ဟု မြင်ယောင်ကြည့်ပါ။ အဆိုပါ username တွင် letters,numbers,underscores နှင့် hyphens များ ပါဝင်ခွင့် ပြုမည်။ သို့သော် username ကို ဖတ်ရဆိုးစေသည့် စကားလုံးအရေအတွက် ရှည်လျားစွာမပါဝင်စေရန် စာလုံးရေ ကို ကန့်သတ်ချင်သည်။ ကျွန်တော်တို့အနေဖြင့် အောက်ပါ Regular Expression ကို username အား စီစစ်ရန် အသုံးပြုနိုင်သည်။
 
 <br/><br/>
@@ -51,9 +45,6 @@ validate the username:
   <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
-The regular expression above can accept the strings `john_doe`, `jo-hn_doe` and
-`john12_as`. It does not match `Jo` because that string contains an uppercase
-letter and also it is too short.
 အထက်ပါ regular expression သည် `john_doe`, `jo-hn_doe` နှင့် `john12_as` စသည့် စာသားများကို လက်ခံသည်။ သို့သော် `Jo` ဆိုသည်နှင့် ကိုက်ညီမည် မဟုတ်။ ဘာကြောင့်လဲဆိုသော် အဆိုပါ စာသားတွင် uppercase စာလုံးပါဝင်သည့်အဖြင့် စာလုံးအရေအတွက်မှာလဲ ၃ လုံးမပြည့်သောကြောင့် ဖြစ်သည်။
 
 ## Table of Contents
@@ -126,11 +117,6 @@ Meta စာလုံးများ ဆိုသည်မှာ regular expressi
 
 ## 2.1 The Full Stop
 
-The full stop `.` is the simplest example of a meta character. The meta character `.`
-matches any single character. It will not match return or newline characters.
-For example, the regular expression `.ar` means: any character, followed by the
-letter `a`, followed by the letter `r`.
-
 Full stop `.` သည် meta စာလုံး၏ အရိုးရှင်းဆုံး ဥပမာဖြစ်သည်။ meta စာလုံးဖြစ်သော `.` သည် မည်သည့် စာလုံးတစ်လုံးနှင့်မဆို ကိုက်ညီသည်။ ၎င်းသည် return (သို့) newline တစ်ကြောင်းဆင်းသည့် character များနှင့်တော့ ကိုက်ညီမည် မဟုတ်။ ဥပမာ အားဖြင့် regular expression `.ar` ဆိုသည်မှာ မည်သည့် စာလုံး မဆို - နောက်တွင် `a`,ဆက်လျက် `r` ရှိသည်ဟု ဆိုလိုသည်။
 
 <pre>
@@ -141,12 +127,6 @@ Full stop `.` သည် meta စာလုံး၏ အရိုးရှင်�
 
 ## 2.2 Character Sets
 
-Character sets are also called character classes. Square brackets are used to
-specify character sets. Use a hyphen inside a character set to specify the
-characters' range. The order of the character range inside the square brackets
-doesn't matter. For example, the regular expression `[Tt]he` means: an uppercase
-`T` or lowercase `t`, followed by the letter `h`, followed by the letter `e`.
-
 Character sets များကို character classes များဟုလဲ ခေါ်သည်။ character sets များကို ဖော်ပြရန်အတွက် Square brackets [] များကို အသုံးပြုသည်။ character set အတွင်းတွင် hyphen အသုံးပြုခြင်းအားဖြင့် characters အပိုင်းအခြား ကို ဖော်ပြသည်။ (ဥပမာ - [A-Z] ဆိုသည်မှာ A မှ Z အထိ character များအားလုံး ပါဝင်သည့် အဓိပ္ပါယ် ဖြစ်သည်။) regular expression `[Tt]he` ဆိုသည်မှာ uppercase `T` (သို့) lowercase `t` ကြိုက်ရာဖြစ်နိုင်ပြီး နောက်ဆက်တွဲ စာလုံး `h`,ဆက်လျက် `e` ပါဝင်သည်ဟု ဆိုလိုသည်။
 
 <pre>
@@ -154,10 +134,6 @@ Character sets များကို character classes များဟုလဲ 
 </pre>
 
 [regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/2ITLQ4/1)
-
-A period inside a character set, however, means a literal period. The regular
-expression `ar[.]` means: a lowercase character `a`, followed by the letter `r`,
-followed by a period `.` character.
 
 character set အတွင်းရှိ period တစ်ခုကို literal period ဟု ခေါ်သည်။ regular expression `ar[.]` သည် lowercase `a`,နောက်တွင် `r`,ဆက်လျက် period `.` စာလုံး ရှိသည်ဟု ဆိုလိုသည်။ 
 
@@ -179,17 +155,11 @@ character set အတွင်းရှိ period တစ်ခုကို litera
 
 ## 2.3 Repetitions
 
-The meta characters `+`, `*` or `?` are used to specify how many times a
-subpattern can occur. These meta characters act differently in different
-situations.
+meta စာလုံးများဖြစ်သည့် `+`, `*` (သို့) `?` များကို subpattern တစ်ခု အကြိမ်မည်မျှ ဖြစ်နိုင်သည်ကို ဖော်ပြရာတွင် အသုံးပြုသည်။ ၎င်း meta စာလုံးများသည် ခြားနားသော အခြေအနေအမျိုးမျိုးတွင် ကွဲပြားစွာ လုပ်ဆောင်သည်။
 
 ### 2.3.1 The Star
 
-The `*` symbol matches zero or more repetitions of the preceding matcher. The
-regular expression `a*` means: zero or more repetitions of the preceding lowercase
-character `a`. But if it appears after a character set or class then it finds
-the repetitions of the whole character set. For example, the regular expression
-`[a-z]*` means: any number of lowercase letters in a row.
+ကြယ်ပွင့်သင်္ကေတ `*` သည် သုည (သို့) သုညထက်ပိုသည့် အကြိမ်အရေအတွက်ကို ကိုက်ညီစေသည်။ regular expression `a*` ဆိုသည်မှာ lowercase `a` လုံးဝ မပါသည်ဖြစ်စေ(သို့) အကြိမ်ကြိမ် ပါသည်ဖြစ်စေ ကိုက်ညီစေမည်။ အကယ်၍ ၎င်းသည် character set (သို့) class အနောက်တွင် တွဲလျက်ပါခဲ့သော အဆိုပါ character set တစ်ခုလုံး၏ အကြိမ်ကြိမ်ပါဝင်မှုကို ရှာဖွေမည်။ ဥပမာ - regular expression `[a-z]*` ဆိုသည်မှာ စာတစ်ကြောင်းတွင် ပါဝင်သည် lowercase အသေးစာလုံးများအားလုံးကို ဆိုလိုသည်။ 
 
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
@@ -197,12 +167,7 @@ the repetitions of the whole character set. For example, the regular expression
 
 [regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/7m8me5/1)
 
-The `*` symbol can be used with the meta character `.` to match any string of
-characters `.*`. The `*` symbol can be used with the whitespace character `\s`
-to match a string of whitespace characters. For example, the expression
-`\s*cat\s*` means: zero or more spaces, followed by a lowercase `c`,
-followed by a lowercase `a`, followed by a lowercase `t`,
-followed by zero or more spaces.
+ကြယ်ပွင့်သင်္ကေတ `*` ကို meta စာလုံးဖြစ်သည့် `.` နှင့် တွဲဖက်အသုံးပြုပြီး မည်သည့်စကားစုကိုမဆို ကိုက်ညီစေရန် `.*` ဟု သုံးနိုင်သည်။ ကြယ်ပွင့်သင်္ကေတ `*` ကို whitespace စာလုံး `\s` နှင့် တွဲသုံးပြီး ကွက်လပ်နေရာလွတ်များကို ရှာဖွေရန် သုံးသည်။ ဥပမာ - `\s*cat\s*` expression သည် သုည(သို့)ထက်ပိုသော ကွက်လပ်များပါဝင်ပြီး နောက်တွင် `c`,ဆက်လျက် `a`,ဆက်လျက် `t`,နောက်တွင် သုည(သို့) ထပ်ပိုသော ကွက်လပ်များ ပါသည်ဟု ဆိုလိုသည်။
 
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
@@ -212,10 +177,7 @@ followed by zero or more spaces.
 
 ### 2.3.2 The Plus
 
-The `+` symbol matches one or more repetitions of the preceding character. For
-example, the regular expression `c.+t` means: a lowercase `c`, followed by
-at least one character, followed by a lowercase `t`. It needs to be
-clarified that`t` is the last `t` in the sentence.
+အပေါင်းသင်္ကေတ `+` သည် တစ်ခု (သို့) ထက်ပိုသော စာလုံးအရေအတွက်နှင့် ကိုက်ညီသည်။ ဥပမာ - regular expression `c.+t` သည် `c` စာလုံးသေး,နောက်တွင် အနည်းဆုံး စာလုံးတစ်လုံး (သို့) တစ်လုံးထက်ပိုသော စာလုံးများ, ထို့နောက်တွင် `t`စာလုံးသေး ပါဝင်သည်ဟု ဆိုလိုသည်။ ၎င်းအနေဖြင့် `t` သည် စာကြောင်း နောက်ဆုံး `t` ဖြစ်ကြောင်း ဖော်ပြရန် လိုအပ်သည်။
 
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
@@ -225,10 +187,7 @@ clarified that`t` is the last `t` in the sentence.
 
 ### 2.3.3 The Question Mark
 
-In regular expressions, the meta character `?` makes the preceding character
-optional. This symbol matches zero or one instance of the preceding character.
-For example, the regular expression `[T]?he` means: Optional uppercase
-`T`, followed by a lowercase `h`, followed by a lowercase `e`.
+regular expressions တွင် မေးခွန်းသင်္ကေတ`?` သည် တွဲလျက်စာလုံးကို optional ဖြစ်စေရန် ပြုလုပ်ပေးသည်။ အဆိုပါသင်္ကေတသည် သုည (သို့) တစ်ခုထက်ပိုသော တွဲလျက်စာလုံးနှင့် ကိုက်ညီစေသည်။ ဥပမာအားဖြင့် regular expression `[T]?he` သည် Optional စာလုံးကြီး `T` နောက်တွင် စာလုံးသေး `h`,ဆက်လျက် စာလုံးသေး `e`ရှိသည်ဟု ဆိုလိုသည်။
 
 <pre>
 "[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
@@ -244,10 +203,7 @@ For example, the regular expression `[T]?he` means: Optional uppercase
 
 ## 2.4 Braces
 
-In regular expressions, braces (also called quantifiers) are used to
-specify the number of times that a character or a group of characters can be
-repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
-2 digits, but not more than 3, ranging from 0 to 9.
+regular expressions တွင် တွန့်ကွင်း {} braces(quantifiers ဟုလဲ ခေါ်။) ကို စာလုံး (သို့) စကားစုများ၏ ထပ်ခါတလဲလဲ ဖြစ်နိုင်သော အကြိမ်အရေအတွက်ကို ဖော်ပြရာတွင် အသုံးပြုသည်။ ဥပမာအားဖြင့် regular expression `[0-9]{2,3}` ဆိုသည်မှာ အနည်းဆုံး ဂဏန်း ၂ လုံးမှ အများဆုံး ၃ လုံးအတွင်းရှိသည့် 0-9 ကိန်းဂဏန်းများနှင့် ကိုက်ညီသည်။
 
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -255,9 +211,8 @@ repeated. For example, the regular expression `[0-9]{2,3}` means: Match at least
 
 [regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/juM86s/1)
 
-We can leave out the second number. For example, the regular expression
-`[0-9]{2,}` means: Match 2 or more digits. If we also remove the comma, the
-regular expression `[0-9]{3}` means: Match exactly 3 digits.
+ကျွန်တော်တို့ အနေဖြင့် ဒုတိယဂဏန်းကို ချန်လှပ်ထားခဲ့နိုင်သည်။ ဥပမာ - regular expression
+`[0-9]{2,}` ဆိုသည်မှာ ဂဏန်းနှစ်လုံး (သို့) နှစ်လုံးထက်များသော အရေအတွက်နှင့် ကိုက်ညီသည်။ အကယ်၍ ကျွန်တော်တို့အနေဖြင့် comma `,` ကို ဖယ်ရှားခဲ့ပါက regular expression `[0-9]{3}` ဆိုသည်မှာ အတိအကျ ဂဏန်း ၃ လုံးနှင့် ကိုက်ညီသည်ဟု ဆိုလိုသည်။
 
 <pre>
 "[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
@@ -273,14 +228,7 @@ regular expression `[0-9]{3}` means: Match exactly 3 digits.
 
 ## 2.5 Capturing Groups
 
-A capturing group is a group of subpatterns that is written inside parentheses 
-`(...)`. As discussed before, in regular expressions, if we put a quantifier 
-after a character then it will repeat the preceding character. But if we put a quantifier
-after a capturing group then it repeats the whole capturing group. For example,
-the regular expression `(ab)*` matches zero or more repetitions of the character
-"ab". We can also use the alternation `|` meta character inside a capturing group.
-For example, the regular expression `(c|g|p)ar` means: a lowercase `c`,
-`g` or `p`, followed by `a`, followed by `r`.
+Capturing Group ဆိုသည်မှာ `(...)` parentheses အတွင်း ရေးထားသော subpatterns အစုအဖွဲ့ကို ဆိုလိုသည်။ ယခင်ကဆွေးနွေးခဲ့သည့်အတိုင်း regular expression များတွင် ကျွန်တော်တို့အနေဖြင့် စာလုံးတစ်လုံးနောက်တွင် quantifier တစ်ခုထည့်ပါက ၎င်းသည် စာလုံးကို ထပ်ခါထပ်ခါ ဖော်ပြမည်။ သို့သော် capturing group တစ်ခုနောက်တွင် quantifier တစ်ခု ထည့်သောအခါ ၎င်းသည် capturing group တစ်ခုလုံးကို ထပ်ခါတလဲလဲ ဖော်ပြမည် ဖြစ်သည်။ ဥပမာ- regular expression `(ab)*` ဆိုသည်မှာ "ab" စကားစုကို သုည (သို့) သုညထက်ပိုသော အကြိမ်အရေအတွက်ဖြင့် ဖော်ပြမည်ဖြစ်သည်။ `|` meta စာလုံးကိုလဲ capturing group အတွင်းတွင် ထည့်သွင်း အသုံးပြုနိုင်သည်။ ဥပမာ - regular expression `(c|g|p)ar` ဆိုသည်မှာ စာလုံးသေး `c` (သို့) `g` (သို့) `p` နောက်တွင် `a`,ဆက်လျက် `r` ရှိမည် ဖြစ်သည်။
 
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
@@ -288,9 +236,7 @@ For example, the regular expression `(c|g|p)ar` means: a lowercase `c`,
 
 [regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/tUxrBG/1)
 
-Note that capturing groups do not only match, but also capture, the characters for use in 
-the parent language. The parent language could be Python or JavaScript or virtually any
-language that implements regular expressions in a function definition.
+capturing groups များသည် တူညီမှုကို ရှာနိုင်ရုံသာမက မိခင်ပရိုဂရမ်ဘာသာတွင် ပြန်လည်အသုံးပြုရန် စာလုံးများကိုလဲ မှတ်သားနိုင်သည်။မိခင်ပရိုဂရမ်ဘာသာ ဆိုသည်မှာ Python (သို့) JavaScript (သို့) regular expressions ကို အသုံးပြုနိုင်သည့် အခြား မည်သည့် language ကိုမဆို ဆိုလိုသည်။
 
 ### 2.5.1 Non-Capturing Groups
 
