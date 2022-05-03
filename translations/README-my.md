@@ -245,15 +245,16 @@ does not capture the group. A non-capturing group is denoted by a `?` followed b
 within parentheses `(...)`. For example, the regular expression `(?:c|g|p)ar` is similar to 
 `(c|g|p)ar` in that it matches the same characters but will not create a capture group.
 
+non-capturing group ဆိုသည်မှာ စာလုံးများကို ကိုက်ညီပေးသည့် capturing group ဖြစ်သော်လည်း အဆိုပါ group ကို မှတ်သားခြင်း မပြုလုပ်ပါ။ non-capturing group ကို `(...)` parentheses အတွင်းတွင် `?`,ဆက်လျက် `:` ဖြင့် ဖော်ပြသည်။ ဥပမာအားဖြင့် regular expression `(?:c|g|p)ar` သည် `(c|g|p)ar` နှင့် ဆင်တူသည်။ ၎င်းသည် တူညီသောစာလုံးများကို ကိုက်ညီပေးသော်လဲ group တစ်ခုအနေဖြင့် မှတ်သားလိမ့်မည် မဟုတ်ပါ။
+
 <pre>
 "(?:c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
 
 [regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/Rm7Me8/1)
 
-Non-capturing groups can come in handy when used in find-and-replace functionality or 
-when mixed with capturing groups to keep the overview when producing any other kind of output. 
-See also [4. Lookaround](#4-lookaround).
+Non-capturing group သည် find & replace function (သို့) မည်သည့် output မဆို ရရှိရန် အခြား capturing groups များနှင့် ရောနှောပီး overview ကိုထိန်းသိမ်းရန် တို့အတွက် အသုံးဝင်သည်။
+ဆက်လက်ဖတ်ရှုရန် - [4. Lookaround](#4-lookaround).
 
 ## 2.6 Alternation
 
@@ -268,6 +269,8 @@ regular expression `(T|t)he|car` means: either (an uppercase `T` or a lowercase
 a lowercase `r`). Note that I included the parentheses for clarity, to show that either expression
 in parentheses can be met and it will match.
 
+regular expression တွင် ဒေါင်လိုက်ဘား သင်္ကေတ `|` သည် alternation ကို ဖော်ပြရန် အသုံးပြုသည်။ Alternation ဆိုသည်မှာ တစ်ခုထက်ပိုသော expression များအကြားတွင် OR statement ကဲ့သို့ အလုပ်လုပ်သည်။ ယခု သင့်အနေဖြင့် character sets [] နှင့် alternation `|` အကြား တူညီသည်ဟု ထင်နေနိုင်သည်။ သို့သော် character sets နှင့် alternation အကြား အဓိကခြားနားချက်မှာ character sets သည် စကားလုံးအဆင့် character level တွင်သာ အလုပ်လုပ်ပြီး alternation ကမူ ဖော်ပြချက် expression level တွင် အလုပ်လုပ်သည်။ ဥပမာ - regular expression `(T|t)he|car` သည် (စာလုံးကြီး `T` သို့ စာလုံးသေး `t`,နောက်တွင် စာလုံးသေး `h`,ဆက်လျက် စာလုံးသေး `e`) သို့မဟုတ် (စာလုံးသေး `c`,ဆက်လျက် စာလုံးသေး `a`,ဆက်လျက် စာလုံးသေး `r`) - အခြေအနေနှစ်ခု အနက် တစ်ခု ဖြစ်နိုင်သည်။ ဒီနေရာတွင် ကျွန်တော်တို့အနေနဲ့ () parentheses များကို ရှင်းလင်းစေရန် ထည့်သွင်းဖော်ပြထားပီး parentheses အတွင် ဖြစ်နိုင်သည့် အခြေအနေတစ်ခုချင်းဆီ ကိုက်ညီနိုင်မှုကို မြင်သာစေရန် ဖြစ်သည်။
+
 <pre>
 "(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
@@ -279,17 +282,22 @@ in parentheses can be met and it will match.
 A backslash `\` is used in regular expressions to escape the next character. This
 allows us to include reserved characters such as `{ } [ ] / \ + * . $ ^ | ?` as matching characters. To use one of these special character as a matching character, prepend it with `\`.
 
+Backslash `\` ကို regular expressions တွင် တွဲလျက်စာလုံးကို ချွင်းချက်ဖြစ်စေရန် (သို့) လွတ်မြောက်စေရန် သုံးသည်။ အထူးစာလုံးများဖြစ်သည့် `{ } [ ] / \ + * . $ ^ | ?` များကို သာမာန်စာလုံးများအနေဖြင့် ကိုက်ညီစေရန် တွဲဖက်အသုံးပြုနိုင်သည်။ ထိုသို့ အထူးစာလုံးများထဲမှ တစ်လုံးကို အသုံးပြုမည် ဆိုပါက ၎င်းကို `\` တွဲကပ်လျက် အသုံးပြုပါ။
+
 For example, the regular expression `.` is used to match any character except a
 newline. Now, to match `.` in an input string, the regular expression
 `(f|c|m)at\.?` means: a lowercase `f`, `c` or `m`, followed by a lowercase
 `a`, followed by a lowercase `t`, followed by an optional `.`
 character.
 
+ဥပမာအားဖြင့် regular expression `.` သည် newline မှလွဲ၍ အခြားမည်သည့် စာလုံးနှင့်မဆို ကိုက်ညီရန် အသုံးပြုသည်။ ယခု `.` ကို သာမာန်စာကြောင်းအနေဖြင့် ကိုက်ညီစေရန် the regular expression
+`(f|c|m)at\.?` ဆိုသည်မှာ စာလုံးသေး `f`(သို့) `c` (သို့) `m`,နောက်တွင် ဆက်လျက် စာလုံးသေး `a`,ဆက်လျက် စာလုံးသေး `t`,ဆက်လျက် optional `.` ရှိမည်ဟု ဆိုလိုသည်။
+
 <pre>
 "(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/DOc5Nu/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/DOc5Nu/1)
 
 ## 2.8 Anchors
 
@@ -320,7 +328,7 @@ lowercase `h`, followed by a lowercase `e`.
 "^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jXrKne/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/jXrKne/1)
 
 ### 2.8.2 The Dollar Sign
 
@@ -333,13 +341,13 @@ character and the matcher must be at the end of the string.
 "(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/y4Au4D/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/y4Au4D/1)
 
 <pre>
 "(at\.)$" => The fat cat. sat. on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/t0AkOd/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/t0AkOd/1)
 
 ##  3. Shorthand Character Sets
 
