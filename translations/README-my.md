@@ -45,7 +45,7 @@ Regular expression ဆိုသည်မှာ ရှာဖွေလိုသေ
   <img src="../img/regexp-en.png" alt="Regular expression">
 </p>
 
-အထက်ပါ regular expression သည် `john_doe`, `jo-hn_doe` နှင့် `john12_as` စသည့် စာသားများကို လက်ခံသည်။ သို့သော် `Jo` ဆိုသည်နှင့် ကိုက်ညီမည် မဟုတ်။ ဘာကြောင့်လဲဆိုသော် အဆိုပါ စာသားတွင် uppercase စာလုံးပါဝင်သည့်အဖြင့် စာလုံးအရေအတွက်မှာလဲ ၃ လုံးမပြည့်သောကြောင့် ဖြစ်သည်။
+အထက်ပါ regular expression သည် `john_doe`, `jo-hn_doe` နှင့် `john12_as` စသည့် စာသားများကို လက်ခံသည်။ သို့သော် `Jo` ဆိုသည်နှင့် ကိုက်ညီမည် မဟုတ်။ ဘာကြောင့်လဲဆိုသော် အဆိုပါ စာသားတွင် uppercase စာလုံးပါဝင်သည့်အပြင် စာလုံးအရေအတွက်မှာလဲ ၃ လုံးမပြည့်သောကြောင့် ဖြစ်သည်။
 
 ## Table of Contents
 
@@ -336,7 +336,9 @@ which means: get all the numbers which contain the `.` character and are precede
 by the `$` character. These are the lookarounds that are used in regular
 expressions:
 
-|Symbol|Description|
+Lookbehinds နှင့် Lookaheads (Lookarounds ဟုလဲ ခေါ်သည်) တို့သည် ***non-capturing groups*** ၏ ပုံစံတူအမျိုးအစားများဖြစ်ပီး pattern ကို ကိုက်ညီသော်လည်း ကိုက်ညီမှုစာရင်း list ထဲတွင် ထည့်သွင်းမှတ်သားခြင်း မရှိပါ။ Lookarounds များကို pattern တစ်ခုသည် အခြား pattern တစ်ခု၏ ရှေ့အစပိုင်း(သို့)နောက်ပိုင်း ဆက်လျက် တည်ရှိနေသည့်အချိန်တွင် သုံးသည်။ ဥပမာ - `$4.44 and $10.88` စာကြောင်းတွင် `$` ဖြင့် စတင်သော ဂဏန်းများကိုသာ ရယူလိုသည် ဆိုပါစို့။ ထို့အတွက် regular expression `(?<=\$)[0-9\.]*` ကို အသုံးပြုမည်။ ရှင်းလင်းချက် - `$`ဖြင့် စတင်ပြီး`.`စာလုံးအပါအဝင် ဂဏန်းများအားလုံးကို ယူမည် ဟု အဓိပ္ပါယ် ရသည်။ regular expressions များတွင် အသုံးပြုသော Lookarounds များအား အောက်ပါဇယားအတိုင်း ဖြစ်သည်။
+
+|သင်္ကေတ|အဓိပ္ပါယ်ဖွင့်ဆိုချက်|
 |:----:|----|
 |?=|Positive Lookahead|
 |?!|Negative Lookahead|
@@ -356,11 +358,13 @@ the equals sign inside parentheses. For example, the regular expression
 define a positive lookahead which tells the regular expression engine to match `The`
 or `the` only if it's followed by the word `fat`.
 
+Positive Lookahead ဆိုသည်မှာ lookahead expression အနောက်တွင် တွဲလျက်ရှိသည့် expression ပထမအပိုင်းကို ယူသည်။ return ပြန်ရာတွင် expression ပထမအပိုင်း နှင့် ကိုက်ညီသော စာသားများသာလျှင် ပါဝင်မည် ဖြစ်သည်။ Positive Lookahead ကို ရေးသားရာတွင် parentheses အတွင်းတွင် question mark `?` နှင့် equals sign `=` တို့ကို ထည့်သွင်းရေးသားသည့်ပုံစံ `(?=...)` ဖြင့် ရေးသားသည်။ Lookahead expression ကို equals sign ၏ နောက်တွင် ဆက်ရေးသည်။ ဥပမာ - regular expression `(T|t)he(?=\sfat)` ဆိုသည်မှာ စာလုံးသေး `t` သို့မဟုတ် စာလုံးကြီး `T` တစ်ခုခုနောက်တွင် စာလုံး `h`,ဆက်လျက် `e` လိုက်မည်။ parentheses အတွင်းတွင် ကျွန်တော်တို့အနေဖြင့် Positive Lookahead ကို ကြေငြာခဲ့သောကြောင့် regular expression engine အနေဖြင့် နောက်ဆက်တွဲ စာလုံး `fat` တွဲလျက်လိုက်နေသည့် `The` (သို့) `the` ကိုသာ ကိုက်ညီပါမည်။ 
+
 <pre>
 "(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/IDDARt/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/IDDARt/1)
 
 ### 4.2 Negative Lookahead
 
@@ -375,7 +379,7 @@ from the input string that are not followed by a space character and the word `f
 "(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/V32Npg/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/V32Npg/1)
 
 ### 4.3 Positive Lookbehind
 
@@ -388,7 +392,7 @@ from the input string that come after the word `The` or `the`.
 "(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/avH165/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/avH165/1)
 
 ### 4.4 Negative Lookbehind
 
@@ -401,7 +405,7 @@ string that are not after the word `The` or `the`.
 "(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/8Efx5G/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/8Efx5G/1)
 
 ## 5. Flags
 
@@ -428,13 +432,13 @@ whole input string.
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dpQyf9/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/dpQyf9/1)
 
 <pre>
 "/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/ahfiuh/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/ahfiuh/1)
 
 ### 5.2 Global Search
 
@@ -448,13 +452,13 @@ the regular expression, it will now find all matches in the input string, not ju
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/jnk6gM/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/jnk6gM/1)
 
 <pre>
 "/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
 
-[Test the regular expression](https://regex101.com/r/dO1nef/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/dO1nef/1)
 
 ### 5.3 Multiline
 
@@ -472,7 +476,7 @@ at the end of each line in a string.
                 on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/hoGMkP/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/hoGMkP/1)
 
 <pre>
 "/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
@@ -480,7 +484,7 @@ at the end of each line in a string.
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
 
-[Test the regular expression](https://regex101.com/r/E88WE2/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/E88WE2/1)
 
 ## 6. Greedy vs Lazy Matching
 By default, a regex will perform a greedy match, which means the match will be as long as
@@ -490,13 +494,13 @@ possible. We can use `?` to match in a lazy way, which means the match should be
 "/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
 
 
-[Test the regular expression](https://regex101.com/r/AyAdgJ/1)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/AyAdgJ/1)
 
 <pre>
 "/(.*?at)/" => <a href="#learn-regex"><strong>The fat</strong></a> cat sat on the mat. </pre>
 
 
-[Test the regular expression](https://regex101.com/r/AyAdgJ/2)
+[regular expression ကို စမ်းသပ်ရန်](https://regex101.com/r/AyAdgJ/2)
 
 
 ## Contribution
